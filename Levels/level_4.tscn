@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dad1mbvswjbcw"]
 
 [ext_resource type="Script" path="res://Levels/world.gd" id="1_ndkfd"]
-[ext_resource type="PackedScene" uid="uid://bq7yc8k20ans1" path="res://player.tscn" id="2_relbh"]
-[ext_resource type="PackedScene" uid="uid://2o62q8as42a0" path="res://spikes.tscn" id="3_qhha5"]
-[ext_resource type="PackedScene" uid="uid://crc261cxafskd" path="res://heart.tscn" id="4_l47f2"]
+[ext_resource type="PackedScene" uid="uid://bq7yc8k20ans1" path="res://Entities/player.tscn" id="2_relbh"]
+[ext_resource type="PackedScene" uid="uid://2o62q8as42a0" path="res://Entities/spikes.tscn" id="3_qhha5"]
+[ext_resource type="PackedScene" uid="uid://crc261cxafskd" path="res://Entities/heart.tscn" id="4_l47f2"]
 [ext_resource type="PackedScene" uid="uid://d38nmcxb2atbx" path="res://Levels/level_completed.tscn" id="5_t4yex"]
 [ext_resource type="PackedScene" uid="uid://dxsxy1jot6bjr" path="res://TileMaps/level_tile_map.tscn" id="6_crgyt"]
 

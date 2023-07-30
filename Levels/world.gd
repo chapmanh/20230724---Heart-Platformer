@@ -5,7 +5,6 @@ extends Node2D
 @onready var level_completed = $CanvasLayer/LevelCompleted
 
 func _ready():
-	RenderingServer.set_default_clear_color(Color.BLACK)
 	Events.level_completed.connect(_on_level_completed)
 	LevelTransition.fade_in()
 	get_tree().paused = false
