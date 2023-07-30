@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxsxy1jot6bjr"]
+
+[ext_resource type="TileSet" uid="uid://bnfu1saq23dvg" path="res://TileMaps/level_tile_map.tres" id="1_wfx24"]
+
+[node name="LevelTileMap" type="TileMap"]
+tile_set = ExtResource("1_wfx24")
+format = 2
+layer_0/name = "Base"
+layer_1/name = "Slope"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()
