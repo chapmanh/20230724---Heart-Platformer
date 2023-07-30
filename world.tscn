@@ -1,17 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://1lg8dbfiyf"]
+[gd_scene load_steps=4 format=3 uid="uid://1lg8dbfiyf"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_nhn2w"]
 [ext_resource type="PackedScene" uid="uid://bq7yc8k20ans1" path="res://player.tscn" id="2_tc43j"]
+[ext_resource type="PackedScene" uid="uid://2o62q8as42a0" path="res://spikes.tscn" id="3_67l1x"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_nhn2w")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(16, 16, 16, 120, 56, 120, 56, 160, 96, 160, 120, 136, 152, 136, 152, 176, 192, 176, 192, 136, 208, 136, 208, 104, 256, 136, 272, 176, 304, 176, 304, 24, 304, 16, 320, 16, 320, 192, 0, 192, 0, 16)
+polygon = PackedVector2Array(16, 16, 16, 120, 56, 120, 56, 160, 96, 160, 120, 136, 152, 136, 152, 176, 184, 176, 184, 136, 208, 136, 208, 104, 256, 136, 272, 176, 304, 176, 304, 24, 304, 16, 320, 16, 320, 192, 0, 192, 0, 16)
 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_tc43j")]
-position = Vector2(40, 80)
+position = Vector2(32, 120)
+
+[node name="Spikes" parent="." instance=ExtResource("3_67l1x")]
+position = Vector2(152, 176)
+
+[node name="Spikes2" parent="." instance=ExtResource("3_67l1x")]
+position = Vector2(168, 176)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bq7yc8k20ans1"]
+[gd_scene load_steps=15 format=3 uid="uid://bq7yc8k20ans1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_iq558"]
 [ext_resource type="Texture2D" uid="uid://dvc4diegn8ewg" path="res://player.png" id="2_3nb0h"]
@@ -81,7 +81,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xq2nj"]
 size = Vector2(8, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54nci"]
+size = Vector2(8, 16)
+
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
 floor_snap_length = 3.0
 script = ExtResource("1_iq558")
 movement_data = ExtResource("2_tpbtc")
@@ -95,6 +100,21 @@ animation = &"idle"
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_xq2nj")
 
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_54nci")
+
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -35)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

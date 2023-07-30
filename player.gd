@@ -7,6 +7,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var coyote_jump_timer = $CoyoteJumpTimer
+@onready var starting_position = global_position
 
 func _physics_process(delta):
 	apply_gravity(delta)
@@ -22,6 +23,7 @@ func _physics_process(delta):
 	var just_left_ledge = (was_on_floor != is_on_floor()) and velocity.y >=0
 	if just_left_ledge:
 		coyote_jump_timer.start()
+#		print("start coyote!")
 
 func apply_gravity(delta):
 	if not is_on_floor():
@@ -38,15 +40,22 @@ func handle_walljump():
 		velocity.y = movement_data.jump_velocity
 		
 func handle_jump():
-	if is_on_floor():
+	if is_on_floor() and !air_jump:
 		air_jump = true
-	if is_on_floor() or coyote_jump_timer.time_left > 0.0:
+#		print("Reset Double Jump.")
+	if is_on_floor(): 
 		if Input.is_action_just_pressed("jump"):
+#			print("Regular Jump!")
+			velocity.y = movement_data.jump_velocity
+	elif coyote_jump_timer.time_left > 0.0:
+		if Input.is_action_just_pressed("jump"):
+#			print("Coyote Jump!")
 			velocity.y = movement_data.jump_velocity
 	elif !is_on_floor() and !is_on_wall():
 		if Input.is_action_just_released("jump") and velocity.y < movement_data.jump_velocity / 2:
 			velocity.y = movement_data.jump_velocity / 2
 		if Input.is_action_just_pressed("jump") and air_jump:
+#			print("Double Jumped.")
 			velocity.y = movement_data.jump_velocity * 0.8
 			air_jump = false
 
@@ -81,3 +90,7 @@ func update_animations(input_axis, x_velocity):
 
 	if not is_on_floor():
 		animated_sprite_2d.play("jump")
+
+
+func _on_hitbox_area_entered(area):
+	global_position = starting_position
