@@ -29,6 +29,7 @@ window/stretch/mode="canvas_items"
 
 [gui]
 
+theme/custom="res://UI/heart_theme.tres"
 theme/custom_font="res://UI/pixel_font.ttf"
 theme/default_font_antialiasing=0
 theme/default_font_hinting=2

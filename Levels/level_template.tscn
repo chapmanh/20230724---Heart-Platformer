@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://1lg8dbfiyf"]
+[gd_scene load_steps=6 format=3 uid="uid://1lg8dbfiyf"]
 
 [ext_resource type="Script" path="res://Levels/world.gd" id="1_gpuxs"]
 [ext_resource type="PackedScene" uid="uid://bq7yc8k20ans1" path="res://Entities/player.tscn" id="2_tc43j"]
+[ext_resource type="PackedScene" uid="uid://crefnbs20eh3j" path="res://UI/countdown_animation.tscn" id="4_y60qn"]
 [ext_resource type="PackedScene" uid="uid://d38nmcxb2atbx" path="res://Levels/level_completed.tscn" id="5_jsdnd"]
 [ext_resource type="PackedScene" uid="uid://dxsxy1jot6bjr" path="res://TileMaps/level_tile_map.tscn" id="6_qntn7"]
 
@@ -15,5 +16,8 @@ layer = 11
 
 [node name="LevelCompleted" parent="CanvasLayer" instance=ExtResource("5_jsdnd")]
 visible = false
+
+[node name="CountdownAnimation" parent="CanvasLayer" instance=ExtResource("4_y60qn")]
+unique_name_in_owner = true
 
 [node name="LevelTileMap" parent="." instance=ExtResource("6_qntn7")]

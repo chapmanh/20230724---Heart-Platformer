@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://r5in4dsgobbb"]
 
 [ext_resource type="PackedScene" uid="uid://1lg8dbfiyf" path="res://Levels/level_template.tscn" id="1_dba1d"]
-[ext_resource type="PackedScene" uid="uid://dad1mbvswjbcw" path="res://Levels/level_4.tscn" id="2_gys20"]
-[ext_resource type="PackedScene" uid="uid://crc261cxafskd" path="res://heart.tscn" id="2_js1uq"]
-[ext_resource type="PackedScene" uid="uid://2o62q8as42a0" path="res://spikes.tscn" id="3_85c6c"]
+[ext_resource type="PackedScene" uid="uid://dqlall87ag68q" path="res://Levels/level_4.tscn" id="2_gys20"]
+[ext_resource type="PackedScene" uid="uid://crc261cxafskd" path="res://Entities/heart.tscn" id="2_js1uq"]
+[ext_resource type="PackedScene" uid="uid://2o62q8as42a0" path="res://Entities/spikes.tscn" id="3_85c6c"]
 
 [node name="World" instance=ExtResource("1_dba1d")]
 next_level = ExtResource("2_gys20")
