@@ -51,6 +51,7 @@ func handle_jump():
 		if Input.is_action_just_pressed("jump"):
 #			print("Coyote Jump!")
 			velocity.y = movement_data.jump_velocity
+			coyote_jump_timer.stop()
 	elif !is_on_floor() and !is_on_wall():
 		if Input.is_action_just_released("jump") and velocity.y < movement_data.jump_velocity / 2:
 			velocity.y = movement_data.jump_velocity / 2

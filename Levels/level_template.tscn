@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://1lg8dbfiyf"]
+[gd_scene load_steps=7 format=3 uid="uid://1lg8dbfiyf"]
 
 [ext_resource type="Script" path="res://Levels/world.gd" id="1_gpuxs"]
 [ext_resource type="PackedScene" uid="uid://bq7yc8k20ans1" path="res://Entities/player.tscn" id="2_tc43j"]
 [ext_resource type="PackedScene" uid="uid://crefnbs20eh3j" path="res://UI/countdown_animation.tscn" id="4_y60qn"]
+[ext_resource type="Theme" uid="uid://0krbvpbfb2tm" path="res://UI/heart_theme.tres" id="5_5tx2q"]
 [ext_resource type="PackedScene" uid="uid://d38nmcxb2atbx" path="res://Levels/level_completed.tscn" id="5_jsdnd"]
 [ext_resource type="PackedScene" uid="uid://dxsxy1jot6bjr" path="res://TileMaps/level_tile_map.tscn" id="6_qntn7"]
 
@@ -20,4 +21,22 @@ visible = false
 [node name="CountdownAnimation" parent="CanvasLayer" instance=ExtResource("4_y60qn")]
 unique_name_in_owner = true
 
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(0, 15)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 12.0
+grow_horizontal = 2
+
+[node name="LevelTimeLabel" type="Label" parent="CanvasLayer/CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+theme = ExtResource("5_5tx2q")
+vertical_alignment = 1
+
 [node name="LevelTileMap" parent="." instance=ExtResource("6_qntn7")]
+
+[connection signal="next_level" from="CanvasLayer/LevelCompleted" to="." method="_on_level_completed_next_level"]
+[connection signal="retry" from="CanvasLayer/LevelCompleted" to="." method="_on_level_completed_retry"]
+[connection signal="go" from="CanvasLayer/CountdownAnimation" to="." method="_on_countdown_animation_go"]

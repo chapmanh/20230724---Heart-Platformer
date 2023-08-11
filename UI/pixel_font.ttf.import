@@ -31,7 +31,7 @@ preload=[{
 "chars": [],
 "glyphs": [],
 "name": "Standard",
-"size": Vector2i(16, 0),
+"size": Vector2i(14, 0),
 "variation_embolden": 0.0
 }]
 language_support={}

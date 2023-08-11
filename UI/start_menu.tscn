@@ -25,11 +25,13 @@ layout_mode = 2
 [node name="ButtonStart" type="Button" parent="CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("1_2b7hu")
 text = "Start Game"
 
 [node name="ButtonQuit" type="Button" parent="CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("1_2b7hu")
 text = "Quit"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ButtonStart" to="." method="_on_button_start_pressed"]
