@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://drfwcyh6ksb0w"]
+
+[ext_resource type="Script" path="res://UI/game_complete.gd" id="1_0g3vb"]
+[ext_resource type="PackedScene" uid="uid://bpl8o5gtd0dmb" path="res://UI/start_menu.tscn" id="2_qar7v"]
+
+[node name="GameComplete" type="CenterContainer"]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_0g3vb")
+main_menu = ExtResource("2_qar7v")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="GameCompleLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Game Complete!
+Thanks For Playing!"
+horizontal_alignment = 1
+
+[node name="MainMenuButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Main Menu"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

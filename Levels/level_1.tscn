@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5qk8o51rx4ty"]
 
 [ext_resource type="PackedScene" uid="uid://1lg8dbfiyf" path="res://Levels/level_template.tscn" id="1_yh0kk"]
+[ext_resource type="PackedScene" uid="uid://r5in4dsgobbb" path="res://Levels/level_2.tscn" id="2_0u3q6"]
 [ext_resource type="PackedScene" uid="uid://crc261cxafskd" path="res://Entities/heart.tscn" id="2_vei53"]
-[ext_resource type="PackedScene" uid="uid://n3pon0mdm6ig" path="res://Levels/level_2.tscn" id="2_wjiqs"]
 
 [node name="World" instance=ExtResource("1_yh0kk")]
-next_level = ExtResource("2_wjiqs")
+next_level = ExtResource("2_0u3q6")
 
 [node name="Player" parent="." index="0"]
 position = Vector2(40, 128)
