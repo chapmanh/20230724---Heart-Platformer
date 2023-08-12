@@ -40,7 +40,7 @@ text = "Next Level"
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_vp4qf")
-text = "Retry"
+text = "Retry Level"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]

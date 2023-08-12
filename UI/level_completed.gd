@@ -18,10 +18,8 @@ func _process(delta):
 
 
 func _on_next_level_button_pressed():
-	print("Next Level")
 	next_level.emit()
 
 
 func _on_retry_button_pressed():
-	print("retry")
 	retry.emit()

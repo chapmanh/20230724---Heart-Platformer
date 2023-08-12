@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://caj0w6cd5js5"]
+
+[ext_resource type="Script" path="res://Audio/sound_manager.gd" id="1_8xyfg"]
+[ext_resource type="AudioStream" uid="uid://c6mdj7g1qsbp5" path="res://Audio/SewerRush.mp3" id="1_eqy32"]
+[ext_resource type="AudioStream" uid="uid://dcrea7p5toe34" path="res://Audio/HeartBeat.mp3" id="3_yx12k"]
+
+[node name="SoundManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_8xyfg")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_eqy32")
+volume_db = -10.0
+
+[node name="HeartBeat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_yx12k")

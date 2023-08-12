@@ -3,9 +3,9 @@ extends MarginContainer
 @onready var button_start = %ButtonStart
 @onready var button_quit = %ButtonQuit
 
-
 func _ready():
 	RenderingServer.set_default_clear_color(Color.BLACK)
+	SoundManager.background_music.play()
 	button_start.grab_focus()
 
 func _on_button_start_pressed():

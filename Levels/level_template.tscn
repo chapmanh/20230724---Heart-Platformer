@@ -39,8 +39,19 @@ layout_mode = 2
 theme = ExtResource("5_5tx2q")
 vertical_alignment = 1
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/CenterContainer/LevelTimeLabel"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="LevelTileMap" parent="." instance=ExtResource("6_qntn7")]
 
 [connection signal="next_level" from="CanvasLayer/LevelCompleted" to="." method="_on_level_completed_next_level"]
 [connection signal="retry" from="CanvasLayer/LevelCompleted" to="." method="_on_level_completed_retry"]
+[connection signal="retry" from="CanvasLayer/GameComplete" to="." method="_on_level_completed_retry"]
 [connection signal="go" from="CanvasLayer/CountdownAnimation" to="." method="_on_countdown_animation_go"]

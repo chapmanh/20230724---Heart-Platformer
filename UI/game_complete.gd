@@ -1,7 +1,10 @@
 extends CenterContainer
 
+signal retry()
+
 @export var main_menu :PackedScene
 
+@onready var retry_button = %RetryButton
 @onready var main_menu_button = %MainMenuButton
 @onready var quit_button = %QuitButton
 
@@ -21,3 +24,6 @@ func _on_main_menu_button_pressed():
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+
+func _on_retry_button_pressed():
+	retry.emit()
